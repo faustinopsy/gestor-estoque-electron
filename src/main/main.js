@@ -44,7 +44,25 @@ function registerIpcHandlers() {
     }
   });
 
+  ipcMain.handle('estoque:removerProduto', async (event, id) => {
+    try {
+      return estoqueService.removerProduto(id);
+    } catch (error) {
+      console.error("Erro no handler 'removerProduto':", error);
+      throw error;
+    }
+  });
+
+  ipcMain.handle('estoque:editarProduto', async (event, id, dadosProduto) => {
+    try {
+      return estoqueService.editarProduto(id, dadosProduto);
+    } catch (error) {
+      console.error("Erro no handler 'editarProduto':", error);
+      throw error;
+    }
+  });
   console.log("Handlers IPC registrados.");
+  
 }
 
 app.whenReady().then(() => {
