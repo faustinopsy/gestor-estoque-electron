@@ -3,9 +3,41 @@
   <head>
     <meta charset="UTF-8">
     <title>Gestor de Estoque</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <h1>Gestor de Estoque</h1>
-    <p>Bem-vindo à Fase 1!</p>
+    <h1>Gestor de Estoque (OOP + Electron)</h1>
+    
+    <div class="container">
+      
+      <div class="form-container">
+        <h2>Adicionar Novo Produto</h2>
+        <form id="form-produto">
+          <div class="form-group">
+            <label for="nome">Nome do Produto:</label>
+            <input type="text" id="nome" required>
+          </div>
+          <div class="form-group">
+            <label for="sku">SKU (Código):</label>
+            <input type="text" id="sku" required>
+          </div>
+          <div class="form-group">
+            <label for="quantidade">Quantidade Inicial:</label>
+            <input type="number" id="quantidade" value="0" min="0">
+          </div>
+          <button type="submit">Adicionar Produto</button>
+        </form>
+        <p id="mensagem-erro" style="color: red;"></p>
+      </div>
+
+      <div class="list-container">
+        <h2>Inventário Atual</h2>
+        <ul id="lista-produtos">
+          </ul>
+      </div>
+
+    </div>
+
+    <script src="renderer.js" defer></script>
   </body>
 </html>

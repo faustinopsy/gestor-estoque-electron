@@ -1,6 +1,8 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 
+const dbService = require('./services/DatabaseService');
+const estoqueService = require('./services/EstoqueService');
 
 function createWindow() {
   const mainWindow = new BrowserWindow({
